@@ -51,7 +51,8 @@
 				<h1>Today's Menu</h1>
 				<ul>
 				<li class="fragment">What's jade</li>
-				<li class="fragment">jade's character</li>	
+				<li class="fragment">jade's character</li>
+        <li class="fragment">My favorite jade's character</li>	
 				<li class="fragment">Let's jade</li>
 				</ul>
 				</section>
@@ -90,6 +91,114 @@
 					</section>
 				</section>
 
+				<section>
+				<section data-markdown>
+				<h3>インデントで階層を明示</h3>
+				### Before(jade)
+				```
+				section  
+				    p.className 進捗どうでしょう？
+				```
+				</section>
+				
+				<section data-markdown>
+					### After(HTML)
+          
+          &lt;section&gt;
+              &lt;p class="className"&gt;進捗どうでしょう？&lt;/p&gt;
+          &lt;/section&gt;
+          
+          
+					</section>
+				</section>
+    
+        </section>
+        <section>
+          <section>
+            <h2>My favorite jade's charactor</h2>
+            <h3 class="fragment">include</h3>
+            <p class="fragment">jadeはmdファイルなどのインクルードが可能かつ<br>
+           変数も使用できるのでmata情報を変数にしてインクルードでもユニークなmetaを設定できます。</p>
+          </section>
+
+          <section data-markdown>
+          meta.jade (include file)
+          
+          meta(name="description" content="#{description}")
+          meta(name="keywords" content="#{keywords}")
+          link(href="css/style.css", rel="stylesheet")
+          </section>     
+          <section data-markdown>
+          index.jade
+        
+					- var title = 'Title Test';//titleの指定
+					- var description = 'This is a description';//descriptionの指定
+					- var keywords = ['test1', 'test2'];//keywordsの指定
+
+
+					doctype
+					html(land="ja")
+					  head
+					    include _meta
+					  body
+					    .wrapper
+					      header
+					        p test
+					      section.main__content
+					        p
+					      section.right__content
+					      footer
+					        include _footer
+          </section>
+          <section data-markdown>
+            ### result
+						&lt;!DOCTYPE html&gt;
+						&lt;html land="ja"&gt;
+						  &lt;head&gt;
+						    &lt;meta charset="utf-8"&gt;
+						    &lt;title&gt;Title Test&lt;/title&gt;
+						    &lt;meta name="description" content="This is a description"&gt;
+						    &lt;meta name="keywords" content="test1,test2"&gt;
+						    &lt;link href="css/style.css" rel="stylesheet"&gt;
+						  &lt;/head&gt;
+						  &lt;body&gt;
+						    &lt;div class="wrapper"&gt;
+						      &lt;header&gt;
+						        &lt;p&gt;test&lt;/p&gt;
+						      &lt;/header&gt;
+						      &lt;section class="main__content"&gt;
+						        &lt;p&gt;&lt;/p&gt;
+						      &lt;/section&gt;
+						      &lt;section class="right__content"&gt;&lt;/section&gt;
+						      &lt;footer&gt;
+						        &lt;p class="copy"&gt;&copy;Tomoki 2015 All Rights&lt;/p&gt;
+						      &lt;/footer&gt;
+						    &lt;/div&gt;
+						  </body>
+						</html>            
+          </section>
+        </section>
+        <section>
+          <section data-markdown>
+            # mixin
+          </section>
+          <section data-markdown>
+            ### mixin
+            mixin img(src, alt, className)
+				  - if(className)
+				    img(class="#{className}", src="img/#{src}", alt="#{alt}")
+				  - else
+				    img(src="img/#{src}", alt="#{alt}")
+
+						p
+				   		+img("img/ttl.jpg", "タイトル画像", "header_ttl")
+          </section>
+          <section data-markdown>
+            ### After
+            &lt;p>&lt;img src="img/img/ttl.jpg" alt="タイトル画像" class="header_ttl"/&gt;
+            &lt;/p&gt;//なぜか改行されてしまう・・・
+          </section>
+        </section>
 				<section data-markdown>
 					<script type="text/template">
 						## Markdown support
@@ -314,8 +423,7 @@ function linkify( selector ) {
 				<section style="text-align: left;">
 					<h1>THE END</h1>
 					<p>
-						- <a href="http://slides.com">Try the online editor</a> <br>
-						- <a href="https://github.com/hakimel/reveal.js">Source code &amp; documentation</a>
+						- HTML Slide by<a href="http://slides.com">reveal.js</a> <br>
 					</p>
 				</section>
 
