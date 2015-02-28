@@ -112,7 +112,6 @@
 					</section>
 				</section>
     
-        </section>
         <section>
           <section>
             <h2>My favorite jade's charactor</h2>
@@ -179,20 +178,22 @@
           </section>
         </section>
         <section>
-          <section data-markdown>
-            # mixin
-            テンプレートをモジュール化する機能	
+          <section>
+	          <h2>mixin</h2>
+	          <p>テンプレートをモジュール化する機能	</p>
           </section>
-          <section data-markdown>
-            ### mixin
+          <section> 
+          	<h2>mixin</h2>
+          	<pre><code data-trim contenteditable>
             mixin img(src, alt, className)
-				  - if(className)
-				    img(class="#{className}", src="img/#{src}", alt="#{alt}")
-				  - else
-				    img(src="img/#{src}", alt="#{alt}")
+  - if(className)
+    img(class="#{className}", src="img/#{src}", alt="#{alt}")
+  - else
+    img(src="img/#{src}", alt="#{alt}")
 
-						p
-				   		+img("img/ttl.jpg", "タイトル画像", "header_ttl")//imgというmixinを呼び出す
+p
+  +img("img/ttl.jpg", "タイトル画像", "header_ttl")//imgというmixinを呼び出す
+				   	</code></pre>
           </section>
           <section data-markdown>
             ### After
