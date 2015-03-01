@@ -58,9 +58,9 @@
 				</section>
 				
 				<section data-markdown>
-				# Whats's jade
-				JavaScript Templatesの一つでHTMLを簡単にかける記法みたいなやつです。  
-				CSSのすごいやつがSassなら、HTMLのすごいやつ
+				# What's jade
+				JadeはJavaScriptのNode.jsで実装されたテンプレートエンジンでHTMLを簡単にかける記法みたいなやつです。  
+				CSSのすごいやつがSassなら、HTMLのすごいやつとおぼえましょう。
 				</section>
 				<section data-markdown>
 				# jade's character
@@ -103,11 +103,13 @@
 				
 				<section data-markdown>
 					### After(HTML)
-          
-          &lt;section&gt;
-              &lt;p class="className"&gt;進捗どうでしょう？&lt;/p&gt;
-          &lt;/section&gt;
-          
+          <p>
+            <code>
+            &lt;section&gt;
+                &lt;p class="className"&gt;進捗どうでしょう？&lt;/p&gt;
+            &lt;/section&gt;
+            </code>
+          </p>
           
 					</section>
 				</section>
@@ -180,16 +182,17 @@
         <section>
           <section>
 	          <h2>mixin</h2>
-	          <p>テンプレートをモジュール化する機能	</p>
+	          <p>テンプレートをモジュール化する機能<br>
+            関数のような形でブロックを生成できます。</p>
           </section>
           <section> 
-          	<h2>mixin</h2>
+          	<h2>example</h2>
           	<pre><code data-trim contenteditable>
             mixin img(src, alt, className)
   - if(className)
     img(class="#{className}", src="img/#{src}", alt="#{alt}")
   - else
-    img(src="img/#{src}", alt="#{alt}")
+    img(src="#{src}", alt="#{alt}")
 
 p
   +img("img/ttl.jpg", "タイトル画像", "header_ttl")//imgというmixinを呼び出す
@@ -197,7 +200,7 @@ p
           </section>
           <section data-markdown>
             ### After
-            &lt;p>&lt;img src="img/img/ttl.jpg" alt="タイトル画像" class="header_ttl"/&gt;
+            &lt;p>&lt;img src="img/ttl.jpg" alt="タイトル画像" class="header_ttl"/&gt;
             &lt;/p&gt;//なぜか改行されてしまう・・・
           </section>
         </section>
