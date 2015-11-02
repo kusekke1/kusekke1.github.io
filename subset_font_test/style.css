@@ -1,0 +1,15 @@
+@font-face {
+    font-family: "NotoSansCJKjp";
+    font-style: normal;
+    font-weight: normal;
+    src: url('./NotoSansCJKjp-Thin.eot');
+    src: url('./NotoSansCJKjp-Thin.eot?#iefix') format('embedded-opentype'),
+    url('./NotoSansCJKjp-Thin.woff') format('woff'),
+    url('./NotoSansCJKjp-Thin.otf') format('opentype')
+}
+
+p {
+    font-family: 'NotoSansCJKjp', 'Meiryo';
+    color: green;
+}
+
